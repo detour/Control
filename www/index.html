@@ -119,8 +119,8 @@
     </script>
   </head>
   
-  <body id="stage" style="background-color:#fff; -webkit-user-select: none;"  onload="document.addEventListener('touchmove', preventBehavior, false);" class="theme"> 
-  
+  <body id="stage" style=" background-color:#000; -webkit-user-select: none;"  onload="document.addEventListener('touchmove', preventBehavior, false);" class="theme"> 
+		
     <div id="selectedInterface"></div>
       
     <div id="Interfaces">
@@ -138,22 +138,29 @@
   		</div>
   		-->
   		<div id="exhibition">
-        <div id="head" class="clearfix">
-          <div id="logo">Hijackers</div>
+        <!-- <div id="head" class="clearfix">
+          <div id="logo">Hijackersssss</div> -->
           <div id="control_bar">
-            <h2>slideshow</h2>
-            <div class="switch">
-              <span class="on">on</span>
+            <!-- <h2>slideshow</h2> -->
+            <div class="switch" style="background-image:url(images/auto_slide.png);background-repeat:no-repeat;height:56px;">
+              <!-- <span class="on">on</span>
               <span class="off">off</span>
-              <span class="btn is_off"></span>
+              <span class="btn is_off"></span> -->
             </div>
           </div>
         </div>
     
-        <div id="projects">
-          <div class="project">
-            <h2>the search operators</h2>
-            <div class="arrow">\/</div>
+        <div id="projects" style="border:1px solid #000; background-color:#fff;position:absolute;width:566px;height:1024px;left:192px;">
+	
+					<div class="statement" style="height:246px;width:100%;">
+						<div class="cols one_cols clearfix" style="margin-top:30px;">
+							<div class="col" rel="/statement/one">statement</div>
+						</div>
+					</div>
+	
+          <div class="project" style="margin-top:39px;">
+            <!-- <h2>the search operators</h2> -->
+            <!-- <div class="arrow">\/</div> -->
             <div class="cols three_cols clearfix">
               <div class="col" rel="/search/one">demo video</div>
               <div class="col" rel="/search/two">sloppy trends</div>
@@ -161,18 +168,29 @@
             </div>
           </div>
       
-          <div class="project">
-            <h2>anti-like magnet</h2>
-            <div class="arrow">\/</div>
+          <div class="project" style="margin-top:4px;">
+            <!-- <h2>anti-like magnet</h2> -->
+            <!-- <div class="arrow">\/</div> -->
             <div class="cols two_cols clearfix">
               <div class="col" rel="/magnet/one">latest report</div>
               <div class="col last_col" rel="/magnet/two">report archive</div>
             </div>
           </div>
+
+					<div class="project" style="margin-top:4px;">
+            <!-- <h2>anti-like magnet</h2> -->
+            <!-- <div class="arrow">\/</div> -->
+            <div class="cols one_cols clearfix">
+              <div class="col" rel="/monster/one">monster bites</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   
+		<div style="width:768px; height:1024px;position:absolute;"><img src="images/bg.png"/></div>
+
     <div id="Destinations">
   		<div id="header">
   			<h1>Destinations</h1>
@@ -199,10 +217,17 @@
   		</div>
     </div>
   
+
+
+
+
+
+
     <div id="Info">
 
     </div>
     
+
     <!--
     <div id="InfoBackup">
       <div id="header">
@@ -228,6 +253,12 @@
     
     <!--<div style="display:block; position:fixed; top: 100px; left: 100px; width:50px; height:50px; background-color:#f00; z-index:100;" ontouchend="window.location.reload()"><h2>RELOAD</h2></div>-->
   
+
+
+		
+		
+		
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/interface.js"></script>
   </body>
