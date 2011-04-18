@@ -2,10 +2,11 @@
 if (window.jQuery == undefined) { alert('please include jquery first'); return false; }
 
 var projectClass = 'project';
-var columnClass = 'col';
+var columnClass = 'col_link';
 var colSelector = '.'+projectClass+' .'+columnClass;
 var headerSelector = '.'+projectClass+' h2';
 var bgColor = "#68FFC0";
+var projectColContainers = $('.project .col');
 var projectCols = $(colSelector);
 var projectHeaders = $(headerSelector);
 var projectArrows = $('.arrow');
@@ -15,6 +16,7 @@ var slideshowMode = true;
 var nextCol = projectCols[0];
 var colTimeout = null;
 var timeouts = [];
+var SLIDESHOW_PERIOD = 10000;
 
 var Interface = {
   init: function() {
@@ -40,7 +42,7 @@ var Interface = {
     }
     
     switchBar.click(function(){
-      if(switchBtn.hasClass('is_off')) {
+      if(switchBar.hasClass('is_off')) {
         that.slideshowOn();
       } else {
         that.slideshowOff();
@@ -52,10 +54,12 @@ var Interface = {
     this.resetToDefault();
     var project = col.parents('.'+projectClass);
     
-    col.css('background-color', bgColor);
+    col.parents('.col').css('background-color', bgColor);
+    /*
     project.find('h2').css('background-color', bgColor);
     var leftPos = col.position().left + col.width()/2;
     project.find('.arrow').show().css('left', leftPos);
+    */
     
     PhoneGap.exec('OSCManager.send', col.attr('rel'), 'i', 0);
   },
@@ -72,18 +76,23 @@ var Interface = {
       nextCol = projectCols[nextIndex];
       
       var d = new Date();
-      timeouts[d.getTime().toString()] = setTimeout(colTimeout, 3000);
+      timeouts[d.getTime().toString()] = setTimeout(colTimeout, parseInt($(projectCols[currentIndex]).attr('time')));
     }
   },
   
   slideshowOn: function() {
     slideshowMode = true;
     colTimeout();
+
+    switchBar.removeClass('is_off');
+    switchBar.css('background-position', '0 -56px');
     
+    /*
     switchBtn.removeClass('is_off');
     switchBtn.animate({
       left: '+=76'
     });
+    */
   },
   
   slideshowOff: function() {
@@ -93,11 +102,16 @@ var Interface = {
       clearTimeout(timeouts[name]);
     }
     
-    if(!switchBtn.hasClass('is_off')) {
+    if(!switchBar.hasClass('is_off')) {
+      switchBar.addClass('is_off');
+      switchBar.css('background-position', '0 0');
+      
+      /*
       switchBtn.addClass('is_off');
       switchBtn.animate({
         left: '-=76'
       });
+      */
     }
   },
   
@@ -106,7 +120,7 @@ var Interface = {
   },
   
   resetColor: function() {
-    projectCols.css('background-color', '#fff');
+    projectColContainers.css('background-color', '#fff');
     projectHeaders.css('background-color', '#fff');
     projectArrows.hide();
   }

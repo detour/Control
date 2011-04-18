@@ -142,7 +142,7 @@
           <div id="logo">Hijackersssss</div> -->
           <div id="control_bar">
             <!-- <h2>slideshow</h2> -->
-            <div class="switch" style="background-image:url(images/auto_slide.png);background-repeat:no-repeat;height:56px;">
+            <div class="switch is_off" style="background-image:url(images/auto_slide.png);background-repeat:no-repeat;height:56px;">
               <!-- <span class="on">on</span>
               <span class="off">off</span>
               <span class="btn is_off"></span> -->
@@ -152,9 +152,11 @@
     
         <div id="projects" style="border:1px solid #000; background-color:#fff;position:absolute;width:566px;height:1024px;left:192px;">
 	
-					<div class="statement" style="height:246px;width:100%;">
+					<div class="statement project" style="height:246px;width:100%;">
 						<div class="cols one_cols clearfix" style="margin-top:30px;">
-							<div class="col" rel="/statement/one">statement</div>
+							<div class="col" rel="/statement/one">
+							  <div class="col_link" rel="/statement/one" time="20000"></div>
+							</div>
 						</div>
 					</div>
 	
@@ -162,9 +164,15 @@
             <!-- <h2>the search operators</h2> -->
             <!-- <div class="arrow">\/</div> -->
             <div class="cols three_cols clearfix">
-              <div class="col" rel="/search/one">demo video</div>
-              <div class="col" rel="/search/two">sloppy trends</div>
-              <div class="col last_col" rel="/search/three">reviews</div>
+              <div class="col" rel="/search/one">
+                <div class="col_link" rel="/search/one" time="75000"></div>
+              </div>
+              <div class="col" rel="/search/two">
+                <div class="col_link" rel="/search/two" time="20000"></div>
+              </div>
+              <div class="col last_col" rel="/search/three">
+                <div class="col_link" rel="/search/three" time="20000"></div>
+              </div>
             </div>
           </div>
       
@@ -172,8 +180,12 @@
             <!-- <h2>anti-like magnet</h2> -->
             <!-- <div class="arrow">\/</div> -->
             <div class="cols two_cols clearfix">
-              <div class="col" rel="/magnet/one">latest report</div>
-              <div class="col last_col" rel="/magnet/two">report archive</div>
+              <div class="col" rel="/magnet/one">
+                <div class="col_link" rel="/magnet/one" time="60000"></div>
+              </div>
+              <div class="col last_col" rel="/magnet/two">
+                <div class="col_link" rel="/magnet/two" time="80000"></div>
+              </div>
             </div>
           </div>
 
@@ -181,7 +193,9 @@
             <!-- <h2>anti-like magnet</h2> -->
             <!-- <div class="arrow">\/</div> -->
             <div class="cols one_cols clearfix">
-              <div class="col" rel="/monster/one">monster bites</div>
+              <div class="col" rel="/monster/one">
+                <div class="col_link" rel="/monster/one" time="30000"></div>
+              </div>
             </div>
           </div>
 
